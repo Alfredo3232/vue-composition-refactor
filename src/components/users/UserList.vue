@@ -43,7 +43,7 @@ export default {
     return {
       enteredSearchTerm: "",
       activeSearchTerm: "",
-      sorting: null,
+      sorting: null
     };
   },
   computed: {
@@ -73,7 +73,7 @@ export default {
           return 1;
         }
       });
-    },
+    }
   },
   watch: {
     enteredSearchTerm(val) {
@@ -90,8 +90,8 @@ export default {
     },
     sort(mode) {
       this.sorting = mode;
-    },
-  },
+    }
+  }
 };
 </script>
 
