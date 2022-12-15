@@ -40,7 +40,8 @@ export default {
     UserItem,
   },
   props: ["users"],
-  setup(props, context) {
+  emits: ["list-projects"],
+  setup(props) {
     let enteredSearchTerm = ref("");
     let activeSearchTerm = ref("");
     let sorting = ref(null);
@@ -83,10 +84,10 @@ export default {
     });
 
     // watch functions
-    watch(enteredSearchTerm, function (val) {
+    watch(enteredSearchTerm, function (newVal) {
       setTimeout(() => {
-        if (val === enteredSearchTerm.value) {
-          activeSearchTerm.value = val;
+        if (newVal === enteredSearchTerm.value) {
+          activeSearchTerm.value = newVal;
         }
       }, 300);
     });
